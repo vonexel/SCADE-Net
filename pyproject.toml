@@ -1,0 +1,6 @@
+[project]
+name = "scade-net"
+version = "0.1.0"
+description = "Single-Center Attention and Defocus-Enhanced Network for Generalized Deepfake Detection"
+requires-python = ">=3.11"
+dependencies = []

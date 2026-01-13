@@ -1,11 +1,11 @@
 <p align="center">
 <h1 align="center"><strong>Single-Center Attention and Defocus-Enhanced Network for Generalized Deepfake Detection</strong></h1>
   <p align="center">
-    <a href='https://github.com/vonexel' target='_blank'>Nikolai Mozgovoi </a><sup><img src="assets/DSTU.svg" align="center" width=0.8% >∗</sup>&emsp;
-    <a href='https://donstu.ru/employees/cherkesova-larisa-vladimirovna' target='_blank'> Larissa Cherckesova </a><sup><img src="assets/DSTU.svg" align="center" width=0.8% >&#8224</sup>&emsp;
-    <a href='https://github.com/Irina-64' target='_blank'> Irina Trubchik </a><sup><img src="assets/DSTU.svg" align="center" width=0.8% >&#8224</sup>&emsp;
+    <a href='https://github.com/vonexel' target='_blank'>Nikolai Mozgovoi </a><sup><img src="assets/DSTU.svg" align="center" width=1.8% >∗</sup>&emsp;
+    <a href='https://donstu.ru/employees/cherkesova-larisa-vladimirovna' target='_blank'> Larissa Cherckesova </a><sup><img src="assets/DSTU.svg" align="center" width=1.8% >&#8224</sup>&emsp;
+    <a href='https://github.com/Irina-64' target='_blank'> Irina Trubchik </a><sup><img src="assets/DSTU.svg" align="center" width=1.8% >&#8224</sup>&emsp;
     <br>
-    <sup><img src="assets/DSTU.svg" align="center" width=1.2% ></sup> Don State Technical University <sup>
+    <sup><img src="assets/DSTU.svg" align="center" width=2.4% ></sup> Don State Technical University <sup>
     &emsp;&emsp;
     <br>
     <sup>∗</sup> Contribution&emsp;<sup>&#8224;</sup> Mentorship
