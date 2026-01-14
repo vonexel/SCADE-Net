@@ -2,7 +2,7 @@ import sys
 import argparse
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
-from scade_net.configs import Config, load_config
+from scade_net.configs import config, load_config
 from scade_net.data.preprocessing import preprocess_dataset
 
 

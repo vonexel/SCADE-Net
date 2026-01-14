@@ -1,0 +1,101 @@
+# Model Architecture
+model:
+  input_size: 256
+  input_channels: 4
+  constrained_conv_option: "A"
+  eca_kernel_size: 3
+  dropout_rate: 0.5
+
+
+# Single-Center Loss
+scl_lambda: 0.1
+scl_feature_dim: 1024
+scl_margin: 0.5
+scl_alpha: 0.5
+
+
+# Training
+training:
+  batch_size: 75
+  num_epochs: 100
+
+  # LR Scheduler
+  lr_scheduler: "cosine"                                        # Use Cosine Annealing instead of step
+  initial_lr: 0.001
+  min_lr: 1e-7                                                  # Lower minimum for better convergence
+  warmup_epochs: 5                                              # Linear warmup for stable start
+
+  # Optimizer
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  weight_decay: 1e-5                                            # L2 regularization to prevent overfitting
+
+  # Training options
+  use_mixed_precision: true
+  gradient_clip_norm: 1.0
+
+  # Early stopping
+  early_stopping_patience: 20
+  early_stopping_min_delta: 0.0001                              # Smaller delta for fine improvements
+
+  # Focal Loss
+  use_focal_loss: true
+  focal_alpha: 0.25                                             # Weight for positive class (fake)
+  focal_gamma: 2.0
+
+  # Data loading
+  num_workers: 4
+  use_weighted_sampler: true                                    # Balance classes during training
+  val_split: 0.15
+  test_split: 0.15
+  random_seed: 42
+
+
+# Data Augmentation
+augmentation:
+  horizontal_flip_prob: 0.5
+  rotation_limit: 20
+  zoom_limit: 0.15
+  brightness_limit: 0.3
+  hue_shift_limit: 15
+
+
+# Inference
+inference:
+  video_aggregation_frames: 10
+  threshold: 0.5
+  inference_batch_size: 32
+
+
+# Visualization
+visualization:
+  tsne_max_samples: 1000
+  tsne_perplexity: 30
+  figure_dpi: 150
+
+
+# Data Paths
+data:
+  dataset_root: "./dataset"
+  preprocessed_root: "./preprocessed"
+  rgb_dir: "./preprocessed/face_crops"
+  defocus_dir: "./preprocessed/defocus_maps"
+  splits_path: "./preprocessed/splits.json"
+  output_dir: "./outputs"
+
+
+# Preprocessing
+preprocessing:
+  max_frames_per_video: 100
+  frame_sampling_rate: 10
+  min_frames_per_video: 10
+  face_size: 256
+  face_margin: 0.3
+  min_face_size: 60
+  face_detection_threshold: 0.9
+  compute_defocus: true
+  canny_threshold1: 50
+  canny_threshold2: 150
+  edge_blur_kernel_size: 15
+  guided_filter_radius: 8
+  guided_filter_eps: 0.01
