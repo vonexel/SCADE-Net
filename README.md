@@ -63,6 +63,13 @@ SCADE-Net integrates four complementary innovations, each addressing specific li
 | SCL Center | 1,024 | 3.6% |
 | **Total** | **~28,113** | **100%** |
 
+
+---
+
+<div align="center">
+  <img src="./assets/prediction_visualisation.png" >
+</div>
+
 ---
 
 ## 📋 News
@@ -91,7 +98,7 @@ Raw Video → Frame Extraction → Face Detection → Defocus Generation → RGB
 - **Format preservation**: Maintains temporal diversity while managing dataset size
 
 #### 2. Face Detection and Alignment
-- **Detector**: MTCNN (Multi-task Cascaded Convolutional Networks) [[4]](#references)
+- **Detector**: MTCNN (Multi-task Cascaded Convolutional Networks)
 - **Face size**: 256×256 pixels
 - **Margin**: 30% expansion around detected bounding box
 - **Alignment**: 5-point landmark-based affine transformation
@@ -124,6 +131,56 @@ preprocessed/
 ```
 
 **Critical Note**: Data splitting is performed at the **video level** to prevent identity leakage—frames from the same video never appear in different splits.
+
+---
+
+## 📁 Project Structure  
+```
+SCADE-Net/  
+│  
+├── scade_net/                              # Main Python package  
+│   ├── __init__.py                         # Package initialization and exports  
+│   │  
+│   ├── models/                             # Neural network architectures  
+│   │   ├── __init__.py                     # Model exports  
+│   │   ├── scade_net.py                    # SCADE-Net main architecture (28,113 params)  
+│   │   ├── eca.py                          # Efficient Channel Attention module  
+│   │   ├── constrained_conv.py             # Bayar & Stamm constrained convolution layer  
+│   │   └── losses.py                       # SCL, Focal Loss, and Combined Loss functions  
+│   │  
+│   ├── data/                               # Data processing pipeline  
+│   │   ├── __init__.py                     # Data module exports  
+│   │   ├── dataset.py                      # PyTorch Dataset with video-level splits  
+│   │   ├── defocus_map.py                  # Defocus blur map generator (guided filter)  
+│   │   ├── face_detector.py                # MTCNN-based face detection and alignment  
+│   │   ├── preprocessing.py                # VideoPreprocessor for raw video datasets  
+│   │   └── augmentation.py                 # RGBD-aware data augmentation pipeline  
+│   │  
+│   ├── training/                           # Training infrastructure  
+│   │   ├── __init__.py                     # Training module exports  
+│   │   ├── trainer.py                      # SCADENetTrainer with BCE+SCL combined loss  
+│   │   ├── evaluator.py                    # Comprehensive evaluation metrics and plots  
+│   │   └── utils.py                        # LR schedulers, early stopping, seeding  
+│   │  
+│   ├── visualization/                      # Analysis and visualization tools  
+│   │   ├── __init__.py                     # Visualization exports  
+│   │   └── visualizers.py                  # Grad-CAM, t-SNE, filter visualization  
+│   │  
+│   └── configs/                            # Configuration management  
+│       ├── __init__.py                     # Config exports  
+│       ├── config.py                       # Dataclass-based configuration (100+ params)  
+│       └── advanced_training.yaml             # Advanced features (Focal Loss, etc.) in YAML configuration  
+│  
+├── preprocess.py                           # CLI: Dataset preprocessing script  
+├── train.py                                # CLI: Model training script  
+├── inference.py                            # CLI: Single image/video inference  
+├── app.py                                  # Streamlit web application  
+├── visualize_prediction.py                 # Batch prediction visualization  
+│  
+├── README.md                               # Quick start documentation  
+├── requirements.txt                        # Python dependencies  
+└── LICENSE                                 # MIT License 
+```
 
 ---
 
