@@ -51,7 +51,13 @@ SCADE-Net integrates four complementary innovations, each addressing specific li
 
 4. **Single-Center Loss**: Standard cross-entropy optimizes for discriminative boundaries but may overfit to dataset-specific artifacts. SCL learns a compact hyperspherical representation where real samples cluster around a learnable center, providing inherently better generalization properties.
 
-### Parameter Breakdown
+## 🏗️ Architecture
+
+<div align="center">
+  <img src="./assets/scade_net_arch_figure.svg" >
+</div>
+
+### 🧱 Parameter Breakdown
 
 | Component | Parameters | Percentage |
 |-----------|------------|------------|
