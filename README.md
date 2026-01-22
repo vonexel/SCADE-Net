@@ -330,7 +330,7 @@ uv run inference.py \
 
 ```bash
 # Start the web interface
-streamlit run app.py
+uv run streamlit run app.py
 ```
 
 **Features**:
