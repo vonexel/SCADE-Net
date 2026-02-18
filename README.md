@@ -4,6 +4,7 @@
     <a href='https://github.com/vonexel' target='_blank'>Nikolai Mozgovoi </a><sup><img src="assets/DSTU.svg" align="center" width=1.8% >∗</sup>&emsp;
     <a href='https://donstu.ru/employees/cherkesova-larisa-vladimirovna' target='_blank'> Larissa Cherckesova </a><sup><img src="assets/DSTU.svg" align="center" width=1.8% >&#8224</sup>&emsp;
     <a href='https://github.com/Irina-64' target='_blank'> Irina Trubchik </a><sup><img src="assets/DSTU.svg" align="center" width=1.8% >&#8224</sup>&emsp;
+    <a href='https://donstu.ru/employees/revyakina-elena-aleksandrovna' target='_blank'> Revyakina Elena </a><sup><img src="assets/DSTU.svg" align="center" width=1.8% >&#8224</sup>&emsp;
     <br>
     <br>
     <sup><img src="assets/DSTU.svg" align="center" width=2.4% ></sup> Don State Technical University <sup>
